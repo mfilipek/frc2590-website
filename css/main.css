@@ -1,0 +1,25 @@
+/*
+ *
+ * Nemesis FRC 2590 Main CSS
+ *
+ *
+ */
+ 
+ body {
+	background-color:#cacaca;
+ }
+ 
+ /*this is example of a div id, normally
+   a tag that is unique and whose properties
+   no other classes will inherit*/
+ #container{
+	width: 1000px;
+	min-width:800px;
+	overflow: hidden;
+	background-color:#fff;
+	
+	margin:0px auto;
+ }
+ 
+#header {
+}
