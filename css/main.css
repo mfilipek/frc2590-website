@@ -1,15 +1,12 @@
 /*
  * Nemesis FRC 2590 Main CSS
  *
- * Please read
- * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
- * before editing this document
  */
  
  /* this is the root css value, used
 	as storage for doc wide variables only 
 	
-	NOT SUPPORTED BY ALL BROWSERS
+	NOT SUPPORTED BY [ANY] BROWSERS
 	but near future hopefully
 	
 	usage is
@@ -18,8 +15,13 @@
 	body{ background-color: var(bgColor); }
  */
  
+ /* Global CSS Rules */
  body {
 	background-color: #d6d6d6;
+	font-family: Verdana, Helvetica, sans-serif;
+ }
+ ul{
+	list-style:none;
  }
  
  /* Container Class */
@@ -39,8 +41,9 @@
 	CSS Ids defined with # apply to one
 	specific tag.
  */
- #header {
-}
+ #header-home {
+	margin-bottom: 20px;
+ }
 	#banner img{
 		width:1000px;
 	}
@@ -51,10 +54,24 @@
 		z-index:1;
 	}
 		#logo img{
-			height:200px;
+			height:240px;
 		}
 
 /* Main Content */
  #main{
 	background-color:#fff;
+	display: table;
  }
+	aside{
+		display: table-cell;
+	}
+		#sidebar{
+			padding-top:120px;
+			padding-left:35px;
+			width: 240px;
+		}
+	#content{
+		display: table-cell;
+		width: 760px:
+	}
+	
