@@ -1,25 +1,60 @@
 /*
- *
  * Nemesis FRC 2590 Main CSS
  *
- *
+ * Please read
+ * https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Writing_efficient_CSS
+ * before editing this document
+ */
+ 
+ /* this is the root css value, used
+	as storage for doc wide variables only 
+	
+	NOT SUPPORTED BY ALL BROWSERS
+	but near future hopefully
+	
+	usage is
+	
+	:root{ var-bgColor: #d6d6d6;}
+	body{ background-color: var(bgColor); }
  */
  
  body {
-	background-color:#cacaca;
+	background-color: #d6d6d6;
  }
  
- /*this is example of a div id, normally
-   a tag that is unique and whose properties
-   no other classes will inherit*/
- #container{
-	width: 1000px;
+ /* Container Class */
+ /*
+	CSS Classes are any style that will be
+	applied to multipe div tags
+ */
+ .container {
+ 	width: 1000px;
 	min-width:800px;
 	overflow: hidden;
-	background-color:#fff;
-	
 	margin:0px auto;
  }
  
-#header {
+ /* Header Styles */
+  /*
+	CSS Ids defined with # apply to one
+	specific tag.
+ */
+ #header {
 }
+	#banner img{
+		width:1000px;
+	}
+	#logo{
+		position:absolute;
+		padding-left:35px;
+		top:45px;
+		z-index:1;
+	}
+		#logo img{
+			height:200px;
+		}
+
+/* Main Content */
+ #main{
+	background-color:#fff;
+ }
