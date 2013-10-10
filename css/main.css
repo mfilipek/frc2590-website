@@ -18,10 +18,16 @@
  /* Global CSS Rules */
  body {
 	background-color: #d6d6d6;
+	color: #575656;
 	font-family: Verdana, Helvetica, sans-serif;
+ }
+ a{
+	text-decoration:none;
+	color:#e62901
  }
  ul{
 	list-style:none;
+	padding:0px;
  }
  
  /* Container Class */
@@ -30,7 +36,7 @@
 	applied to multipe div tags
  */
  .container {
- 	width: 1000px;
+ 	width: 1100px;
 	min-width:800px;
 	overflow: hidden;
 	margin:0px auto;
@@ -45,7 +51,7 @@
 	margin-bottom: 20px;
  }
 	#banner img{
-		width:1000px;
+		width:1100px;
 	}
 	#logo{
 		position:absolute;
@@ -66,12 +72,47 @@
 		display: table-cell;
 	}
 		#sidebar{
-			padding-top:120px;
+			padding-top:140px;
 			padding-left:35px;
 			width: 240px;
 		}
+		#sidebar img{
+			margin: 10px 0 10px 0;
+			width:240px;
+		}
+		#sidebar section{
+			border-style: solid none;
+			border-color: #e62901;
+		}
+		/* Navigation */
+		nav{
+			text-transform:uppercase;
+		}
+			nav li{
+				margin: 0 0 25px 0;
+			}
+			nav a{
+				color:#a4a4a4;
+				-webkit-transition:color 0.3s ease;  
+				-moz-transition:color 0.3s ease;  
+				-o-transition:color 0.3s ease;  
+				transition:color 1s ease;  
+			}
+			nav a:hover{
+				color:#e62901; /*red*/
+			}
 	#content{
 		display: table-cell;
 		width: 760px:
 	}
+
+ /*Footer */
+ footer{
+	border-top:solid;
+	border-color:#e62901;
+	background-color:#575656;
+	color:#fff;
+	height:130px;
+ }
+ #foot{margin-top:20px}
 	
