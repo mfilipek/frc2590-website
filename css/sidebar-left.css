@@ -20,7 +20,6 @@
 	background-color: #d6d6d6;
 	color: #575656;
 	font-family: Verdana, Helvetica, sans-serif;
-	font-size: 12px;
  }
  a{
 	text-decoration:none;
@@ -37,7 +36,7 @@
 	applied to multipe div tags
  */
  .container {
- 	width: 1000px;
+ 	width: 1100px;
 	min-width:800px;
 	overflow: hidden;
 	margin:0px auto;
@@ -52,7 +51,7 @@
 	margin-bottom: 20px;
  }
 	#banner img{
-		width:1000px;
+		width:1100px;
 	}
 	#logo{
 		position:absolute;
@@ -69,10 +68,8 @@
 	background-color:#fff;
 	display: table;
  }
-	/* Sidebar */
 	aside{
 		display: table-cell;
-		vertical-align: top;
 	}
 		#sidebar{
 			padding-top:140px;
@@ -90,7 +87,6 @@
 		/* Navigation */
 		nav{
 			text-transform:uppercase;
-			font-size:14px;
 		}
 			nav li{
 				margin: 0 0 25px 0;
@@ -108,24 +104,6 @@
 	#content{
 		display: table-cell;
 		width: 760px:
-	}
-	.flexslider{
-		display:inline-block;
-		padding: 20px 0px 0px 40px;
-		width:90%;
-	}
-	#section-container{
-		margin: 0 0 0 40px;
-	}
-	#spacer{
-		margin-right:30px;
-	}
-	#content section{
-		width:45%;
-		display:inline-block;
-	}
-	#content section img{
-		width:100%;
 	}
 
  /*Footer */
