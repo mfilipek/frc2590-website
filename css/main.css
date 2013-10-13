@@ -83,6 +83,11 @@
 			margin: 10px 0 10px 0;
 			width:240px;
 		}
+		#first img{
+			width: 190px;
+			margin-left: 20px;
+			}
+		
 		#sidebar section{
 			border-style: solid none;
 			border-color: #e62901;
@@ -124,9 +129,35 @@
 		width:45%;
 		display:inline-block;
 	}
-	#content section img{
-		width:100%;
-	}
+		#content section img{
+			width:100%;
+		}
+		.label{
+			text-transform:uppercase;
+			font-size:14px;
+			color:#fff;
+			width: 308px;
+			height: 20px;
+			text-align:center;
+			padding-top:4px;
+			margin-bottom:10px;
+		}
+		#robot-label{
+			background-image:url('../images/div3_small.jpg');
+			background-size: 100% 100%;
+		}
+		#twitter-label{
+			background-image:url('../images/div4_small.jpg');
+			background-size: 100% 100%;
+		}
+/* this targets the default scrollbar (compulsory) 
+	doesn't affect twitter widget : therefore useless
+	
+ ::-webkit-scrollbar {width: 15px;} 
+ ::-webkit-scrollbar-track {background-color: #d6d6d6;}
+ ::-webkit-scrollbar-thumb {background-color: rgba(0, 0, 0, 0.2);}
+ ::-webkit-scrollbar-button {background-color: #575656;}
+::-webkit-scrollbar-corner {background-color: black;} */
 
  /*Footer */
  footer{
@@ -136,5 +167,12 @@
 	color:#fff;
 	height:130px;
  }
- #foot{margin-top:20px}
+ #foot{margin-top:20px;
+	}
+ footer section{
+	width:210px;
+	margin-left:35px;
+	margin-top:20px;
+	display:inline-block;
+	}
 	
