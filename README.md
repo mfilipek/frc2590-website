@@ -12,6 +12,9 @@ How to contribute::
   * the "inspect element" option in Chrome/Firefox is an excellent way to test/examine your html/css
 4. After you've tested your changes, and are confident in their accuracy make a pull request
 
+make sure to set an "upstream" variable (that is me, alexiswolfish/frc2590-website.git) and fetch updates
+from it on the reg, since I'll be constantly updating this space with new pages.
+
 ***
 Useful Resources::
 
