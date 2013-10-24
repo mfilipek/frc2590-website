@@ -25,6 +25,9 @@ HTML/CSS
 https://developer.mozilla.org/en-US/
 (for CSS transitions in Chrome/Safari, refer to a webkit reference)
 
+CSS3 Animations Cheatsheet
+http://www.justinaguilar.com/animations/index.html#
+(this is an external library, but some useful references/examples of what you can do)
 
 ***
 Using our CMS
