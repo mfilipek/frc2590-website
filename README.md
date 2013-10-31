@@ -19,8 +19,10 @@ new Git for Windows client, it does not do this automatically, so make sure to f
 
 
 *If you are push/pulling from school, navigate to your repository and set
-git config http.sslVerify false
 
+    git config http.sslVerify false
+
+in order to get around the self signing certificate error
 
 ***
 Useful Resources::
