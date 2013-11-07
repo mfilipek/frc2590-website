@@ -5,13 +5,5 @@ Contact Us</a></section>
 	<section>sponsor</section>
 	<section>sponsor</section>
 	</footer>
-	
-	<script>
-	$(window).load(function() {
-	  $('.flexslider').flexslider({
-		animation: "slide"
-	  });
-	});
-	</script>
 </body>
 </html>

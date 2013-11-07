@@ -17,6 +17,14 @@
 	<!-- javascript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="scripts/FlexSlider/jquery.flexslider-min.js"></script>
+		
+	<script>
+	$(window).load(function() {
+	  $('.flexslider').flexslider({
+		animation: "slide"
+	  });
+	});
+	</script>
 
 </head>
 <body>
@@ -31,40 +39,37 @@
 	<div id="main" class="container">
 
 		<div id="content">
-			<div class="flexslider">
-			  <ul class="slides">
-				<li>
-				  <img src="images/main/slide1.jpg" />
-				</li>
-				<li>
-				  <img src="images/main/slide2.jpg" />
-				</li>
-				<li>
-				  <img src="images/main/slide3.jpg" />
-				</li>
-				<li>
-				  <img src="images/main/slide4.jpg" />
-				</li>
-				<li>
-				  <img src="images/main/slide5.jpg" />
-				</li>
-			  </ul>
-			</div>
-			<div id="section-container">
-				<section id="spacer">
-					<div class="label" id="robot-label">current robot: Athena</div>
-					<img src="images/main/athena.jpg">
-				</section>
-				<section>
-					<div class="label" id="twitter-label">latest updates</div>
-					<a class="twitter-timeline" href="https://twitter.com/FRC2590" data-widget-id="388759197250113537" data-chrome="nofooter noheader" height="378">Tweets by @FRC2590</a>
-					<script>
-						!function(d,s,id){
-							var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-					</script>
-				</section>
-			</div>
-			
+		
+			<div id ="member-container">
+				<div id ="member">
+					<div id ="profile"></div>
+						<script>
+							document.getElementById("profile").style.backgroundImage = "url('images/blog/peterwolfe.jpg')";
+						</script>
+					<div id ="fields">
+						<div id ="name" class="red">Peter Wolfe</div>
+						<div id ="status" class="grey">Mentor</div>
+						<div id ="team" class="grey">Build Team</div>
+						<div id ="profession" class="grey">Software Architect | Hewlard Packard</div>
+					</div>
+				</div>
+				<div id ="bio">
+					I first heard about FIRST from a coworker. At the time, we both worked at computer maker Compaq and our local office helped sponsor his son's FIRST team from High Tech High School. In appreciation for the sponsorship, the team came into our office and presented that year's challenge, described the robot they had constructed, and gave us a general introduction to FIRST. That year the NJ Regionals were being held at Rutgers University in New Brunswick and I brought my daughters Alex and Erin to see the competition. That was over 10 years ago. Alex was eight years old at the time and Erin 6.
+
+Fast forward 10 years. My wife re-enters the workforce as a teacher first at Hightstown High School and then at the new Robbinsville High School. She heard about FIRST from her Hightstown High co-worker Chris Gregory, senior mentor for Team 1089. Chris encouraged and supported her starting a Robbinsville FIRST team which she did for the 2008 season. Team Nemesis, 2590 was born with no small effort from team 1089 senior mentors, Michael and Sara Reffler.
+
+Daughters Alex and Erin, both now in college, were members of the team that year. I joined as a mentor, and daughter Kiera, although still in grade school, helped wherever and whenever possible. The rest is history!</div>
+				
+			</div><!--member-container-->
+			<div id ="recentPosts">
+				<h3>Recent Posts</h3>
+				<ul>
+					<li>Build Team Protocols</li>
+					<li>The Art of Irish Cooking</li>
+					<li>Science it Works</li>
+					<li>Take your Stinking Paws Off Me You Dirty Ape</li>
+				</ul>
+			</div>	
 		</div><!--content-->
 		
 		<aside id="sidebar">
@@ -82,20 +87,7 @@
 			</nav>
 			<img src="images/div2.jpg">
 			<section>
-			<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team 
-			based out of Robbinsville High School in New Jersey.</p>
-			<p>Founded in 2008, the students in Nemesis routinely solve challenges
-			in business, computer science, engineering, and math.</p>
 			</section>
-			<div id="first"><a href="http://www.usfirst.org/"><img src="images/first.jpg" border="0"></a></div>
-			<p>
-			<a href="http://www.usfirst.org/">FIRST</a>
-			is an international organization which uses competitive robotics 
-			as a vehicle for promoting science & technology. FIRST allows high 
-			school students to work side by side with professional mentors to 
-			learn skills ranging from engineering to marketing, animation and 
-			business.
-			</p>
 		</aside> <!-- sidebar -->
 		
 	</div> <!--container-->
@@ -106,13 +98,6 @@ Contact Us</a></section>
 	<section>sponsor</section>
 	<section>sponsor</section>
 	</footer>
-	
-	<script>
-	$(window).load(function() {
-	  $('.flexslider').flexslider({
-		animation: "slide"
-	  });
-	});
-	</script>
+
 </body>
 </html>
