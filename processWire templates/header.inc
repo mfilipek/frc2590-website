@@ -24,6 +24,8 @@
 	<!-- javascript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script src="<?php echo $config->urls->templates?>scripts/FlexSlider/jquery.flexslider-min.js"></script>
+	<!-- php -->
+	<?php include("./scripts/functions.php"); ?>
 	
 	<script>
 	$(window).load(function() {

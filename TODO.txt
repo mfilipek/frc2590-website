@@ -1,0 +1,13 @@
+TODO || Manual Labor || Coders
+
+=================
+1.) Page Loading symbol if images aren't loaded on front page
+=================
+2.) Populate Members page with all Members/Alumni/Mentors
+		- Download/Find all Headshots off of the H Drive
+		- Create photoshop Action to crop to square and resize to 500px by 500px
+	a.) Create individual pages with the "member" template under the "Members" page. 
+		- make sure to include graduation year/freshly cropped headshot
+=================
+3.) Fix Tagging on the BlogPost template
+=================

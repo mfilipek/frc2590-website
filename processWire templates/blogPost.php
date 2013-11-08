@@ -10,11 +10,20 @@ include("./header.inc");
 			<div id ="author">
 				<div id ="profile"></div>
 					<script>
-						document.getElementById("profile").style.backgroundImage = "url('images/blog/peterwolfe.jpg')";
+						document.getElementById("profile").style.backgroundImage = "url('<?php echo $page->author->profile->url?>')";
 					</script>
-				<div id ="name" class="red">Peter Wolfe</div>
-				<div id ="status" class="grey">Mentor</div>
-				<div id ="team" class="grey">Build Team</div>
+				<div id ="name" class="red"><?php echo $page->author->title?></div>
+				<div id ="status" class="grey">
+					<?php
+						if($page->author->mentor){
+							echo "Mentor";
+						}
+						else{
+							echo "Class of $page->author->class";
+						}
+					?>
+				</div>
+				<div id ="team" class="grey"><?php printTeam($page->author); ?></div>
 				<?php 
 					// If the page is editable, then output a link that takes us straight to the page edit screen:
 					if($page->editable()) {

@@ -15,9 +15,27 @@ include("./header.inc");
 						</script>
 					<div id ="fields">
 						<div id ="name" class="red"><?php echo $page->title?></div>
-						<div id ="status" class="grey">Mentor</div>
-						<div id ="team" class="grey"><?php echo $page->team?></div>
-						<div id ="profession" class="grey"><?php echo $page->job | $page->company ?></div>
+						<div id ="status" class="grey">
+							<?php
+								//output Member or Student info
+								if($page->mentor){ echo "Mentor"; }
+								else{ echo "Class of $page->class";}
+							?>
+						</div>
+						<div id ="team" class="grey">
+							<?php
+								//Output Teams or Multiple Teams
+								printTeam($page);
+							?>
+						</div>
+							<?php 
+							if($page->mentor){ 
+								echo"<div id ='profession' class='grey'>$page->job</div>";
+								}
+							if($page->college){
+								echo"<div id='profession' class='grey'>$page->college</div>";
+							}
+							?>
 					</div>
 				</div>
 				<div id ="bio">
