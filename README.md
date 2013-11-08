@@ -11,11 +11,12 @@ How to contribute::
 3. Preview your changes in Chrome, Firefox, Safarai and optionally Opera
   * the "inspect element" option in Chrome/Firefox is an excellent way to test/examine your html/css
 4. After you've tested your changes, and are confident in their accuracy make a pull request
+5. Check out the ToDO list, sometimes I'll post unGit related tasks that need to be finished
 
 *make sure to set an "upstream" variable (that is me, alexiswolfish/frc2590-website.git) and fetch updates
 from it regularly, since I'll be constantly updating this space with new pages. If you are using the beautiful
 new Git for Windows client, it does not do this automatically, so make sure to follow the instructions on the
-"Setting up Git" page to do so.*
+"Setting up Git", and "Forking a Repo" pages to do so.*
 
 
 *If you are push/pulling from school, navigate to your repository and set
