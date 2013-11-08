@@ -12,7 +12,7 @@ include("./header.inc");
 					<script>
 						document.getElementById("profile").style.backgroundImage = "url('<?php echo $page->author->profile->url?>')";
 					</script>
-				<div id ="name" class="red"><?php echo $page->author->title?></div>
+				<div id ="name" class="red"><a href="<?php echo $page->author->url?>"><?php echo $page->author->title?></a></div>
 				<div id ="status" class="grey">
 					<?php
 						if($page->author->mentor){

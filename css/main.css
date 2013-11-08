@@ -29,6 +29,14 @@
 	text-transform:uppercase;
 	margin-bottom:0px;
  }
+ h2{
+	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
+	text-transform:uppercase;
+	color:#e62901;
+	margin-bottom:0px;
+	font-weight:400;
+	font-size:20px;
+ }
  h3{
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	text-transform:uppercase;
@@ -307,6 +315,21 @@ aside{
 	border-style: dotted none;
 	border-color: #d6d6d6;
 	border-width: 2px;
+}
+/* ======================================================*/
+/* Members */
+#members-container{
+	padding:20px 10px 20px 20px;
+}
+.team{
+	width:250px;
+	padding:10px;
+}
+.team #profile{
+	width:250px;
+	height:250px;
+}
+.team #fields{
 }
 /* ======================================================*/
 /* Blog */

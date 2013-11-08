@@ -11,3 +11,6 @@ TODO || Manual Labor || Coders
 =================
 3.) Fix Tagging on the BlogPost template
 =================
+4.) RecentPosts php script on the Members template
+=================
+5.)
