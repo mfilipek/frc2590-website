@@ -43,6 +43,7 @@
 	color:#e62901;
 	font-weight:400;
 	font-size:14px;
+	margin: 0px;
  }
  a{
 	text-decoration:none;
@@ -321,15 +322,54 @@ aside{
 #members-container{
 	padding:20px 10px 20px 20px;
 }
-.team{
-	width:250px;
-	padding:10px;
+.person{
+	width:200px;
+	padding:15px;
+	display:inline-block;
+	vertical-align:top;
 }
-.team #profile{
-	width:250px;
-	height:250px;
+.person #profile{
+	display:inline-block;
 }
-.team #fields{
+.person #profile img{
+	width:200px;
+	height:200px;
+	-moz-border-radius:200px;
+	-webkit-border-radius:200px;
+	border-radius:200px;
+}
+.person #fields{
+	display:inline-block;
+	width:200px;
+}
+.bio{
+	display: inline;
+	position: relative;
+}
+.bio:hover:after{    background: #333;
+    background: rgba(255,18,12,.8);
+    border-radius: 5px;
+    bottom: 156px;
+    color: #fff;
+    content: attr(title);
+    left: 0%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 200px;
+	min-height:100px;
+	vertical-align:top;
+}
+.bio:hover:before{
+    border: solid;
+   /* border-color: #333 transparent;*/
+	border-color: #e62901 transparent; 
+    border-width: 6px 6px 0 6px;
+    bottom: 150px;
+    content: "";
+    left: 70%;
+    position: absolute;
+    z-index: 99;
 }
 /* ======================================================*/
 /* Blog */
@@ -355,7 +395,7 @@ aside{
 		height:200px;
 		-moz-border-radius:200px;
 		-webkit-border-radius:200px;
-		border-radius:100px;
+		border-radius:200px;
 		background-size: 100%;
 		margin-bottom:10px;
 	}

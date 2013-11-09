@@ -14,14 +14,7 @@ include("./header.inc");
 					</script>
 				<div id ="name" class="red"><a href="<?php echo $page->author->url?>"><?php echo $page->author->title?></a></div>
 				<div id ="status" class="grey">
-					<?php
-						if($page->author->mentor){
-							echo "Mentor";
-						}
-						else{
-							echo "Class of $page->author->class";
-						}
-					?>
+					<?php printStatus($page->author)?>
 				</div>
 				<div id ="team" class="grey"><?php printTeam($page->author); ?></div>
 				<?php 

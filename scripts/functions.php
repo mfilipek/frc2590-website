@@ -4,7 +4,19 @@
  * Use this space to store PHP function used across the entire site
  */
  
- 
+ /* Print Status
+  *
+  * Print the "status" of a current team member, be it 
+  * Mentor, or year of Graduation from Robbinsville
+  */
+ function printStatus($member){
+		if($member->mentor){
+		echo "Mentor";
+	}
+	else{
+		echo "Class of $member->class";
+	}
+ }
  /* Print Team
   *
   * args : pointer to MEMBER object/page
