@@ -1,7 +1,7 @@
 TODO || Manual Labor || Coders
 
 =================
-1.) Page Loading symbol if images aren't loaded on front page
+1.) display Page Loading symbol if images aren't loaded on front page
 =================
 2.) Populate Members page with all Members/Alumni/Mentors
 		- Download/Find all Headshots off of the H Drive
@@ -11,6 +11,32 @@ TODO || Manual Labor || Coders
 =================
 3.) Fix Tagging on the BlogPost template
 =================
-4.) RecentPosts php script on the Members template
+4.) RecentPosts php script on the Member template
+	- write a script that queries the database and finds/displays title
+	  and link to a member's recent blog post.
+	- extra photos of member?
+	- any suggestions for other things to put on the sidebar on individual
+	  member pages?
 =================
-5.)
+5.) Sorting Options on the Members page
+	- By "type" (mentor, alumni, member)
+	- by "team" (build, software, finance, marketing)
+	- by "usefulness?" (mrs. wolfe wants her own arbitrary sort order)
+		- will need extra "usefulness" field for members
+		
+	- switch out the current page and a "new" members-container with
+	  the new sorting functions/php display functions with the current one
+	  with a CSS3 "fade in" effect.
+	- Navigation for Sorting options on top, also to jump to a particular
+	  section of the current sort (e.g. Members, Alumni or Mentors)
+=================
+6.) Better/Real Frc 2590 graphic for the header
+		- see header.inc
+=================
+7.) Find/install Calendar widget
+=================
+8.) Research/Install best WIKI to host on our actual server to go hand in hand with the website
+		- email me a list of pros/cons for each one
+			- priority being readability, ease of organization, ability to match website visually
+			- check out the one for processing.org for a gold standard reference.
+		- the google site one is kinda wonky, (look into formatting?)
