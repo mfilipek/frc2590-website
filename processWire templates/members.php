@@ -23,7 +23,7 @@ include("./header.inc");
 				}
 				foreach($curMembers as $member){
 						echo "<div class='person'>";
-						echo "<a href='#' title='$member->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
+						echo "<a href='$member->url' title='$member->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
 						echo $member->profile->url;
 						echo "</div></span></a><div id='fields'>";
 						echo "<a href='$member->url'><h3>$member->title</h3></a>";
@@ -40,7 +40,7 @@ include("./header.inc");
 					$mentors = $pages->find("mentor=1, sort=class");
 					foreach($mentors as $mentor){
 						echo "<div class='person'>";
-						echo "<a href='#' title='$mentor->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
+						echo "<a href='$member->url' title='$mentor->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
 						echo $mentor->profile->url;
 						echo "</div></span></a><div id='fields'>";
 						echo "<a href='$mentor->url'><h3>$mentor->title</h3></a>";
@@ -68,7 +68,7 @@ include("./header.inc");
 				}
 				foreach($alumni as $member){
 						echo "<div class='person'>";
-						echo "<a href='#' title='$member->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
+						echo "<a href='$member->url' title='$member->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
 						echo $member->profile->url;
 						echo "</div></span></a><div id='fields'>";
 						echo "<a href='$member->url'><h3>$member->title</h3></a>";

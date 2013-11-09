@@ -7,7 +7,6 @@ include("./header.inc");
 	<div id="main" class="container">
 
 		<div id="content">		
-			<?php echo $page->body ?>
 		</div><!--content-->
 		
 		<aside id="sidebar">

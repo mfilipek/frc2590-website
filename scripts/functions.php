@@ -23,7 +23,7 @@
   * output: prints formatted Team names directly to page
   */
  function printTeam($page){
-	$spacer = ' | ';
+	$spacer = '<div class=\'red\'> | </div>';
 	$mult = false;
 	if($page->Build_Team){
 		echo "Build Team";
@@ -42,6 +42,11 @@
 	if($page->Software_Team){
 		if($mult){echo $spacer;}
 		echo "Sotware Team";
+		$mult =true;
+	}
+	if($page->Web_Team){
+		if($mult){echo $spacer;}
+		echo "<div class='red'>Web Team</div>";
 	}
  }
 ?>
