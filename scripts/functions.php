@@ -14,7 +14,7 @@
 		echo "Mentor";
 	}
 	else{
-		echo "Class of $member->class";
+		echo "Class of ".($member->class);
 	}
  }
  /* Print Team

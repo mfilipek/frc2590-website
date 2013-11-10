@@ -16,7 +16,7 @@ include("./header.inc");
 				<div id ="status" class="grey">
 					<?php printStatus($page->author)?>
 				</div>
-				<div id ="team" class="grey"><?php printTeam($page->author); ?></div>
+				<div id ="team" class="grey"><?php printTeam(($page->author)); ?></div>
 				<?php 
 					// If the page is editable, then output a link that takes us straight to the page edit screen:
 					if($page->editable()) {
@@ -34,8 +34,28 @@ include("./header.inc");
 					</div>
 				</div>
 				<div id ="post-content">
-					<?php echo $page->postContent?>
+					<?php
+					/*display featured image. If slider is not empty, display slider instead*/
+						if($page->featuredImage && ($page->sliderImage.length <= 0)){
+							echo "<div id='featured'><img src='".$page->featuredImage->url." '></div>";
+						}
+						else if($page->sliderImage){
+							echo"<div class='flexslider'><ul class='slides'>";
+									foreach($page->sliderImage as $i){
+										echo "<li><img src='{$i->url}'/></li>";
+									}
+							echo"</ul></div><!--flexSlider-->";
+						}
+						echo $page->postContent;
+					?>
 				</div>
+					<script>
+						/*change height of the slider if the sliderHeight variable is filled*/
+						if( (<?php ($page->sliderHeight) ?>) != null){
+							document.getElementById("profile").style.height = <?php $page->sliderHeight ?>;
+						}
+					</script>
+				
 			</div><!--post-->
 		</div><!--content-->
 		

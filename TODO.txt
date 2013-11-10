@@ -10,11 +10,13 @@ TODO || Manual Labor || Coders
 		- make sure to include graduation year/freshly cropped headshot
 =================
 3.) Fix Tagging on the BlogPost template
+		- regular expression to pull out ", " between tags.
+		- put in Array
+		- make searchable
 =================
-4.) RecentPosts php script on the Member template
-	- write a script that queries the database and finds/displays title
-	  and link to a member's last five blog posts (if any).
-	- use the "author" field on the blogPost page as the search query.
+4.) Mentions php script on the Member template
+	- write a script that queries the database and finds/displays max
+	  five blog posts that have his name (title) tagged
 		- extra photos of member?
 		- any suggestions for other things to put on the sidebar on individual
 		  member pages?
@@ -30,6 +32,8 @@ TODO || Manual Labor || Coders
 	  with a CSS3 "fade in" effect.
 	- Navigation for Sorting options on top, also to jump to a particular
 	  section of the current sort (e.g. Members, Alumni or Mentors)
+		- Scroll down instead of jump with a CSS3 animation
+		- this nav bar should be static and remain in place even when scrolling
 =================
 6.) Better/Real Frc 2590 graphic for the header
 		- see header.inc
@@ -55,3 +59,5 @@ TODO || Manual Labor || Coders
 		- include list of all "fields"/variables included with each template
 			- note whether they are mandatory or optional
 			- optional variables need to be checked for null before use
+			
+			

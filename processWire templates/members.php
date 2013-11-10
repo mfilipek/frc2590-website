@@ -40,7 +40,7 @@ include("./header.inc");
 					$mentors = $pages->find("mentor=1, sort=class");
 					foreach($mentors as $mentor){
 						echo "<div class='person'>";
-						echo "<a href='$member->url' title='$mentor->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
+						echo "<a href='$mentor->url' title='$mentor->shortBio' class='bio'><span title='More'><div id='profile' name='profile'>";
 						echo $mentor->profile->url;
 						echo "</div></span></a><div id='fields'>";
 						echo "<a href='$mentor->url'><h3>$mentor->title</h3></a>";

@@ -43,14 +43,32 @@ include("./header.inc");
 				</div>
 			</div><!--member-container-->
 			<div id ="recentPosts">
+				<div id="blog-side">
 				<h3>Recent Posts</h3>
-				<ul>
-					<li>Build Team Protocols</li>
-					<li>The Art of Irish Cooking</li>
-					<li>Science it Works</li>
-					<li>Take your Stinking Paws Off Me You Dirty Ape</li>
-				</ul>
-			</div>			
+					<ul>
+						<?php
+						/*Search blog for authored posts*/
+						$rPosts = $pages->find("parent=/Blog/, author=$page, limit=5, sort=date");
+						foreach( $rPosts as $post){
+							echo "<li><a class='grey' href=\"$post->url\"> $post->title </a></li></br>";
+						}
+						if($rPosts.length == 0){
+							echo "<li><i class='grey'> $page->firstName has not made any posts yet</i></li>";
+						}
+						?>
+					</ul>
+				</div>
+				<div id="blog-side">
+					<h3>Mentions</h3>
+					<!-- Search Blog Post Tags for name-->
+					<ul>
+						<li>Build Team Protocols</li>
+						<li>The Art of Irish Cooking</li>
+						<li>Science it Works</li>
+						<li>Take your Stinking Paws Off Me You Dirty Ape</li>
+					</ul>
+				</div>
+			</div>
 		</div><!--content-->
 		
 		<aside id="sidebar">
