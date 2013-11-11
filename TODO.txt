@@ -1,8 +1,11 @@
 TODO || Manual Labor || Coders
+(Non code tasks will be marked with ***)
+
 
 =================
 1.) display Page Loading symbol if images aren't loaded on front page
 =================
+***
 2.) Populate Members page with all Members/Alumni/Mentors
 		- Download/Find all Headshots off of the H Drive
 		- Create photoshop Action to crop to square and resize to 500px by 500px
@@ -35,11 +38,13 @@ TODO || Manual Labor || Coders
 		- Scroll down instead of jump with a CSS3 animation
 		- this nav bar should be static and remain in place even when scrolling
 =================
+***
 6.) Better/Real Frc 2590 graphic for the header
 		- see header.inc
 =================
 7.) Find/install Calendar widget
 =================
+***
 8.) Research/Install best WIKI to host on our actual server to go hand in hand with the website
 		- email me a list of pros/cons for each one
 			- priority being readability, ease of organization, ability to match website visually
@@ -55,9 +60,24 @@ TODO || Manual Labor || Coders
 		  I put that temp "sponsor" text
 			- that code goes in footer.inc
 =================
+***
 10.) Create Wiki page with all of the different templates, what they are used for
 		- include list of all "fields"/variables included with each template
 			- note whether they are mandatory or optional
 			- optional variables need to be checked for null before use
-			
+================
+11.) Extra navigation on Blog page
+		-Monthly dropdown?
+		-Calendar?
+		-Sort into "teams"
+================
+12.) "Paging" for Blog page
+		- user should be able to click on "next" OR put in an "infinite scroll" script
+		- "Archive" should probably be its own template
+================
+***
+13.) Go back and copy/paste all the old/relevant Blog posts from the old website
+		-Featured images need to be more attractive
+			- Level them in photoshop at least
+			- pick a new one from the flickr
 			
