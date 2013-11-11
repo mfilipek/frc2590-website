@@ -50,7 +50,7 @@ include("./header.inc");
 				}
 				function echoArchive($post){
 					echo "<div class='archive'><a href='".($post->url)."'><div id='blogImg-container' name='featuredImage'>".($post->featuredImage->url)."</div>";
-					echo "<div id='postContent'><div id='title'><h3>".$post->title."</h3></div>";
+					echo "<div id='postContent'><div id='title'><h3>".$post->title."</h3></div></br>";
 					echo "<div class='grey'><a class='grey' href='".($post->author->url)."'>".($post->author->title)."</a></div></a>";
 					echo "<p>".($post->postContent)."</p></div></a>";
 					echo "<div id='profile' name='proPic'>".($post->author->profile->url)."</div></div>";
@@ -73,6 +73,7 @@ include("./header.inc");
 
 			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
 			<section>
+			<h3>Archive</h3>
 			</section>
 			
 		</aside> <!-- sidebar -->

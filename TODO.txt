@@ -42,7 +42,8 @@ TODO || Manual Labor || Coders
 6.) Better/Real Frc 2590 graphic for the header
 		- see header.inc
 =================
-7.) Find/install Calendar widget
+7.) Install/Setup a Google Calendar widget on the /calendar/ page
+		- https://developers.google.com/google-apps/calendar/
 =================
 ***
 8.) Research/Install best WIKI to host on our actual server to go hand in hand with the website
@@ -80,4 +81,7 @@ TODO || Manual Labor || Coders
 		-Featured images need to be more attractive
 			- Level them in photoshop at least
 			- pick a new one from the flickr
-			
+================
+14.) Lightbox for images
+		-when you click on them, they should pop out into their
+		 own larger display

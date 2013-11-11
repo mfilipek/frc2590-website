@@ -22,8 +22,12 @@ include("./header.inc");
 			
 			<div id="section-container">
 				<section id="spacer">
-					<div class="label" id="robot-label">current robot: Athena</div>
-					<img src="<?php echo $config->urls->templates?>images/main/athena.jpg">
+					<?php
+						$robot= $pages->find("parent=/robots/, limit=1, sort=-date");
+						$robot=$robot[0];
+						echo "<a class='white' href='".($robot->url)."'><div class='label' id='robot-label'>current robot: ".($robot->title)."</div>";
+						echo "<img src=".($robot->profile->url)."></a>";
+					?>
 				</section>
 				<section>
 					<div class="label" id="twitter-label">latest updates</div>

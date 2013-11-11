@@ -17,8 +17,8 @@
  /* ======================================================*/
  /* Global CSS Rules */
  @font-face{
-	font-family: "codeBold";
-	src: url("../fonts/code/Code_Bold.otf");
+	font-family: codeBold;
+	src: url('../fonts/code/Code_Bold.otf');
 }
 @font-face{
 	font-family: codeLight;
@@ -31,9 +31,10 @@
 	font-size: 12px;
  }
  h1{
-	/*font-family:"codeBold";*/
+	font-family: 'codeBold', Verdana, Helvetica, sans-serif;
 	font-size: 28px;
-	font-weight:600; 
+	font-weight:600;
+	letter-spacing:5px;
 	text-transform:uppercase;
 	margin:0px;
  }
@@ -125,13 +126,13 @@
 		}
 	#logo{
 		position:absolute;
-		margin-left:825px;
-		top:35px;
+		margin-left:880px;
+		top:45px;
 		z-index:1;
 	}
 		#logo img{
-			height:240px;
-			width:240px;
+			height:200px;
+			width:200px;
 		}
 		
 /* ======================================================*/
@@ -143,19 +144,20 @@
  }
  #content{
 	display: table-cell;
-	width:75%;
+	float:left;
+	width:80%;
 }
 #flexslider-container{
-	height:630px;
+	height:570px;
 }
 .flexslider{
 	display:inline-block;
 	padding: 20px 0px 0px 20px;
-	width:92%;
+	width:95%;
 }
 
 .flex-viewport{
-	height:550px;
+	height:500px;
 }
 
 #section-container{
@@ -165,7 +167,7 @@
 	margin-right:30px;
 }
 #content section{
-	width:45%;
+	width:46.5%;
 	display:inline-block;
 	vertical-align: top;
 }
@@ -195,27 +197,28 @@
 aside{
 	display: table-cell;
 	vertical-align: top;
+	float:right;
 }
 	#sidebar{
-		padding: 150px 30px 0 0px;
-		width: 240px;
+		padding: 120px 20px 0 0px;
+		width: 200px;
 	}
 	#sidebar img{
 		margin: 10px 0 10px 0;
-		width:240px;
+		width:200px;
 	}
 	#first img{
-		width: 190px;
+		width: 150px;
 		margin-left: 20px;
 		}
 	
 	#sidebar section{
 		border-style: solid none;
 		border-color: #e62901;
-		width: 240px;
+		width: 200px;
 	}
 	#sidebar p{
-		width: 240px;
+		width: 200px;
 	}
 /* Sidebar Animation */
 .animateLeftToRight {
@@ -282,7 +285,7 @@ aside{
 #member-container{
 	margin: 20px 0px 20px 20px;
 
-	width:75%;
+	width:79%;
 	height:100%;
 	display:inline-block
 }
@@ -321,7 +324,7 @@ aside{
 	}
 #bio{
 	display: inline-block;
-	width:53%;
+	width:58%;
 	height:100%;
 	margin-top:20px;
 	padding-right: 10px;
@@ -427,7 +430,7 @@ aside{
 	}
 .featured{
 	display: inline-block;
-	width:377px;
+	width:402px;
 	vertical-align:top;
 }
 	.featured:hover{
@@ -436,13 +439,13 @@ aside{
 	#blog-container #fields{
 		font-size:12px;
 		text-align:left;
-		height:140px;
+		height:110px;
 		overflow:hidden;
 		/*264 chara*/
 	}
 #blogImg-container{
 	width:100%;
-	height:200px;
+	height:250px;
 	margin-bottom:10px;
 	background-size:cover;
 	background-repeat:no-repeat;
@@ -450,8 +453,8 @@ aside{
 	
 }
 .mostRecent{
-	width:174px;
-	margin: 20px 10px;
+	width:187px;
+	margin: 10px 10px;
 	display:inline-block;
 	vertical-align:top;
 }
@@ -459,7 +462,10 @@ aside{
 	background-color:rgba(228,239,246,0.8);
 }
 	.mostRecent #profile {
-		width:150px;
+		width:160px;
+		height:160px;
+	}
+	#blog-container .mostRecent #fields{
 		height:150px;
 	}
 .archive{
@@ -522,13 +528,16 @@ aside{
 	}
 	/* Blog Post Header */
 	#post-header{
-		padding-bottom: 10px;
+		padding-bottom: 20px;
+		height:40px;
 		border-style: none none dotted none;
 		border-color: #d6d6d6;
 		border-width: 2px;
 	}
 	#details{
 		text-transform:uppercase;
+		padding-bottom:10px;
+		display:block;
 	}
 	#post-content{
 		padding-top: 20px;
@@ -544,13 +553,9 @@ aside{
 		#robot-container #spacer{
 			margin-right:10px;
 		}
-		#robot-container h1{
-			letter-spacing:5px;
-		}
 	#robotImg {
 		width:50%;
 		height:450px;
-		margin-top:10px;
 		background-size:cover;
 		background-repeat:no-repeat;
 		background-position:center; 
@@ -558,7 +563,6 @@ aside{
 	}
 	#robot-header{
 		height:50px;
-		padding-bottom:10px;
 	}
 	#barR{
 	width:100%;
@@ -571,37 +575,32 @@ aside{
 		font-weight:600px;
 	}
 	#title{
+		float:left;
 		display:inline-block;
 	}
 	#year{
 		float:right;
 		display:inline-block;
 	}
-	#desc-container{
-		width:380px;
-		display:inline-block;
-		vertical-align: top;
-	}
 	#desc{
 		display:inline-block;
-		width:100%;
+		width:45%;
 		padding:0 10px;
 		vertical-align:top;
 	}
-		#desc #title{
-			float:left;
-			padding:20px 0 0 0;
-			border-bottom:dotted;
-			border-color: #d6d6d6;
-			border-width: 2px;
-			width:100%;
-		}
+	#desc #title{
+		padding:20px 0 0 0;
+		border-bottom:dotted;
+		border-color: #d6d6d6;
+		border-width: 2px;
+		width:100%;
+	}
 	#extras{
 		padding-top:10px;
 	}
 	.extra{
 		display: inline-block;
-		width:256px;
+		width:274px;
 	}
 	.extra .label{
 		height:10px;
