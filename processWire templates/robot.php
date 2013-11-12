@@ -20,12 +20,17 @@ include("./header.inc");
 								<tr><th>Record</th><td><?php echo $page->record; ?></td>  </tr>
 								<tr><th>Drive Team</th>
 									<td><?php 
-											foreach(($page->driveTeam) as $driver){
-												echo "<a href='".$driver->url."'>".$driver->title."</a>  ";
+											for($i=0; $i < sizeof($page->driveTeam); $i++){
+												$driver = $page->driveTeam[$i];
+												echo "<a href='".$driver->url."'>".$driver->title."</a>";
+												if($i < sizeof($page->driveTeam)-1){
+													echo ", ";
+												}
 											}
 										?>
 									</td> 
 								</tr>
+								<tr><th>Awards</th><td></td>  </tr>
 							</table>
 					</div>
 				</div>

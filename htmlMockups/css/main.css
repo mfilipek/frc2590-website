@@ -648,6 +648,8 @@ aside{
 		width:256px;
 	}
 	.extra .label{
-		height:10px;
+		height:15px;
+		font-size:12px;
 		background-size:100%;
+		padding-top:0px;
 	}
