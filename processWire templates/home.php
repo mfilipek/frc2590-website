@@ -26,13 +26,14 @@ include("./header.inc");
 						$robot= $pages->find("parent=/robots/, limit=1, sort=-date");
 						$robot=$robot[0];
 						echo "<a class='white' href='".($robot->url)."'><div class='label' id='robot-label'>current robot: ".($robot->title)."</div>";
-						echo "<img src=".($robot->profile->url)."></a>";
+						echo "<div id='robotImage' class='bgReplace' name='robotImage'>".($robot->profile->url)."</div></a>";
 					?>
 				</section>
 				<section>
 					<div class="label" id="twitter-label">latest updates</div>
 					<a class="twitter-timeline" href="https://twitter.com/FRC2590" data-widget-id="388759197250113537" data-chrome="nofooter noheader" height="378">Tweets by @FRC2590</a>
 					<script>
+						cssBackground('robotImage');
 						!function(d,s,id){
 							var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 					</script>

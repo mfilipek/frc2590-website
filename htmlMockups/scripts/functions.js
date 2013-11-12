@@ -13,3 +13,13 @@ function cssBackground(divName){
 		images[i].innerHTML="";
 	}
 }
+
+/*Is Overflowed
+ *
+ * takes a DOM element and returns a boolean if the element has an overflow value
+ * element must have a fixed height for this to work.
+ */
+ 
+function isOverflowed(element){
+    return element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
+}

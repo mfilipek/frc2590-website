@@ -16,10 +16,10 @@ include("./header.inc");
 				$year = intval(date("Y"));
 				$curMonth = intval(date("m"));
 				if($curMonth >= 8){
-					$curMembers = $pages->find("parent=/members/, mentor=0, class>$year, sort=-class, sort=lastName");
+					$curMembers = $pages->find("parent=/members/, mentor=0, class>$year, sort=class, sort=lastName");
 				}
 				else{
-					$curMembers = $pages->find("parent=/members/, mentor=0, class>=$year, sort=-class, sort=lastName");
+					$curMembers = $pages->find("parent=/members/, mentor=0, class>=$year, sort=class, sort=lastName");
 				}
 				foreach($curMembers as $member){
 						echo "<div class='person'>";

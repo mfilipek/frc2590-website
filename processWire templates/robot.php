@@ -12,26 +12,53 @@ include("./header.inc");
 					<div id="barR"></div>
 					<div id="title"><h1 class="red"><?php echo $page->title; ?></h1></div><div id="year"><h1 class="red"><?php echo $page->year; ?></h1></div>
 				</div>
-				<div>
+				<div id="stats-container">
 					<div id="robotImg" name="profile"><?php echo $page->profile->url; ?></div>
-					<div id="desc-container">
-						<div id="desc">
-							<?php echo $page->postContent; ?>
-						<div id="title"><h1 class="red">The Challenge</h1></div>
-						<h3 class="grey"><?php echo $page->challengeName; ?></h3>
-						<p><?php echo $page->challenge; ?></p>
-						</div>
+					<div id="stats">
+						<h3>Stats</h3>
+							<table border="0">
+								<tr><th>Record</th><td><?php echo $page->record; ?></td>  </tr>
+								<tr><th>Drive Team</th>
+									<td><?php 
+											foreach(($page->driveTeam) as $driver){
+												echo "<a href='".$driver->url."'>".$driver->title."</a>  ";
+											}
+										?>
+									</td> 
+								</tr>
+							</table>
 					</div>
 				</div>
+				<div id="desc-container">
+					<div id="desc">
+						<div id="about">
+							<?php /*Display post content with a readMore or
+									link to attatched blog post*/
+								if($page->aboutPointer){
+									echo ($page->aboutPointer->postContent);
+								}else{
+									echo ($page->postContent);
+								}
+							?>
+						</div>
+						<div class="readMore">
+							<a href="<?php if($page->aboutPointer){echo $page->aboutPointer->url;} ?>">...Continue Reading</a>
+						</div>
+					<div id="title"><h1 class="red">The Challenge</h1></div>
+					<h3 class="grey"><?php echo $page->challengeName; ?></h3>
+					<p><?php echo $page->challenge; ?></p>
+					</div>
+				</div>
+
 				<div id="extras">
 					<div class="extra" id="spacer">
-						<div class="label" id="robot-label"></div>
+						<div class="label" id="robot-label">Articles</div>
 					</div>
 					<div class="extra" id="spacer">
 						<div class="label" id="robot-label"></div>
 					</div>
 					<div class="extra">
-						<div class="label" id="robot-label"></div>
+						<div class="label" id="robot-label">Record</div>
 					</div>
 				</div>
 			</div>

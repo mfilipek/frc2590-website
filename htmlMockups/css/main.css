@@ -94,6 +94,12 @@
 	margin:0px auto;
  }
  
+ .bgReplace{
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center; 
+ }
+ 
  /* ======================================================*/
  /* Header Styles */
 
@@ -159,19 +165,24 @@
 }
 
 #section-container{
-	margin: 0 0 30px 20px;
+	margin: 0 0 50px 20px;
 }
 #spacer{
 	margin-right:30px;
 }
 #content section{
 	width:45%;
+	height:378px;
 	display:inline-block;
 	vertical-align: top;
 }
 	#content section img{
 		width:100%;
 	}
+#robotImage{
+	width:100%;
+	height:378px; 
+}
 	.label{
 		text-transform:uppercase;
 		font-size:14px;
@@ -230,7 +241,7 @@ aside{
 	}
 	@-webkit-keyframes asideLeftToRight{
 	}
-		/* ======================================================*/
+/* ======================================================*/
 		/* Navigation */
 		nav{
 			text-transform:uppercase;
@@ -527,6 +538,9 @@ aside{
 		border-color: #d6d6d6;
 		border-width: 2px;
 	}
+		#post-header #title{
+			display:block;
+		}
 	#details{
 		text-transform:uppercase;
 	}
@@ -547,15 +561,6 @@ aside{
 		#robot-container h1{
 			letter-spacing:5px;
 		}
-	#robotImg {
-		width:50%;
-		height:450px;
-		margin-top:10px;
-		background-size:cover;
-		background-repeat:no-repeat;
-		background-position:center; 
-		display:inline-block;
-	}
 	#robot-header{
 		height:50px;
 		padding-bottom:10px;
@@ -577,6 +582,34 @@ aside{
 		float:right;
 		display:inline-block;
 	}
+	/*----------------------*/
+	#stats-container{
+		display:inline-block;
+		width:50%;
+	}
+		#robotImg {
+			width:100%;
+			height:450px;
+			margin-top:10px;
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-position:center; 
+		}
+		#stats{
+			border-style: dotted none;
+			border-color: #d6d6d6;
+			border-width: 2px;
+		}
+			#stats table, tr, th, td{
+				text-align:left;
+			}
+			#stats table{
+				margin:10px;
+			}
+			#stats th{
+				width:100px;
+			}
+	/*----------------------*/
 	#desc-container{
 		width:380px;
 		display:inline-block;
@@ -590,10 +623,20 @@ aside{
 	}
 		#desc #title{
 			float:left;
-			padding:20px 0 0 0;
+			padding:5px 0 0 0;
 			border-bottom:dotted;
 			border-color: #d6d6d6;
 			border-width: 2px;
+			width:100%;
+		}
+		#about{
+			width:100%;
+			overflow:hidden;
+			height:18em;
+			line-height:1.42em;
+		}
+		.readMore{
+			text-align:right;
 			width:100%;
 		}
 	#extras{
@@ -601,6 +644,7 @@ aside{
 	}
 	.extra{
 		display: inline-block;
+		vertical-align:top;
 		width:256px;
 	}
 	.extra .label{
