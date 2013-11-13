@@ -52,12 +52,25 @@
 	margin-bottom: 20px;
  }
 	#banner img{
-		width:1000px;
+		width: 100%;
+	}
+	#nemesis{
+		position:absolute;
+		padding-left:30px;
+		top:35px;
+		z-index:1;
+		min-width:800px;
+	}
+	#frc{
+		display:inline-block;
+		vertical-align:top;
+		font-size:38px;
+		padding-left:100px;
 	}
 	#logo{
 		position:absolute;
-		padding-left:35px;
-		top:45px;
+		left:922px;
+		top:35px;
 		z-index:1;
 	}
 		#logo img{
@@ -69,6 +82,7 @@
 	background-color:#fff;
 	display: table;
  }
+
  
  /* ////////////////////Michael */
 
@@ -85,6 +99,27 @@
    
     background-image:url('../images/div3_small.jpg');
     background-size: 100% 100%;
+
+ #content{
+	display: table-cell;
+	width:75%;
+}
+.flexslider{
+	display:inline-block;
+	padding: 20px 0px 0px 40px;
+	width:90%;
+}
+/*
+.flex-viewport{
+	height:500px;
+}
+*/
+#section-container{
+	margin: 0 0 30px 20px;
+}
+#spacer{
+	margin-right:30px;
+
 }
 
 #robot{
@@ -103,6 +138,7 @@
 	margin-right: auto;
 	width:200px;   
 }
+
 	#description{
 		display: inline-block;
 	}
@@ -136,6 +172,18 @@
 			padding-top:140px;
 			padding-left:35px;
 			width: 240px;
+
+	#sidebar{
+		padding: 150px 30px 0 0px;
+		width: 240px;
+	}
+	#sidebar img{
+		margin: 10px 0 10px 0;
+		width:240px;
+	}
+	#first img{
+		width: 190px;
+		margin-left: 20px;
 		}
 		#sidebar img{
 			margin: 10px 0 10px 0;
