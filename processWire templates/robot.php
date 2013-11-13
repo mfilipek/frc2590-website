@@ -18,6 +18,7 @@ include("./header.inc");
 						<h3>Stats</h3>
 							<table border="0">
 								<tr><th>Record</th><td><?php echo $page->record; ?></td>  </tr>
+								<tr><th>MAR Rank</th><td><?php if($page->marRank){echo $page->marRank; } else{ echo "N/A";}?></td>  </tr>
 								<tr><th>Drive Team</th>
 									<td><?php 
 											for($i=0; $i < sizeof($page->driveTeam); $i++){
@@ -30,7 +31,17 @@ include("./header.inc");
 										?>
 									</td> 
 								</tr>
-								<tr><th>Awards</th><td></td>  </tr>
+								<tr><th>Awards</th>
+									<td><?php
+										if($page->awards){
+											$awards = explode(", ", $page->awards);
+											foreach($awards as $award){
+												echo "<p>".$award."</p>";
+											}
+										}
+									?>
+									</td>  
+								</tr>
 							</table>
 					</div>
 				</div>
@@ -47,13 +58,22 @@ include("./header.inc");
 							?>
 						</div>
 						<div class="readMore">
-							<a href="<?php if($page->aboutPointer){echo $page->aboutPointer->url;} ?>">...Continue Reading</a>
+							<a href="<?php if($page->aboutPointer){echo $page->aboutPointer->url."#blogPost";} ?>">...Continue Reading</a>
 						</div>
 					<div id="title"><h1 class="red">The Challenge</h1></div>
 					<h3 class="grey"><?php echo $page->challengeName; ?></h3>
 					<p><?php echo $page->challenge; ?></p>
 					</div>
 				</div>
+				<?php
+					if( ($page->sliderImage) != null){
+						echo "<div id='flexslider-container'> <div class='flexslider'><ul class='slides'>";
+							foreach($page->sliderImage as $i){
+								echo "<li><img src='".($i->url)."'/></li>";
+							}
+						echo "</ul></div></div>";
+					}
+				?>
 
 				<div id="extras">
 					<div class="extra" id="spacer">
@@ -69,7 +89,11 @@ include("./header.inc");
 			</div>
 		<script>
 			cssBackground("profile");
+	/*		if(<?php echo $page->sliderHeight;?>){ 
+				(document.getElementsByClassName('flex-viewport')[0]).style.height = <?php echo $page->sliderHeight.'px'; ?>; 
+				}*/
 		</script>
+				
 		</div><!--content-->
 		
 		<aside id="sidebar">
@@ -79,6 +103,19 @@ include("./header.inc");
 
 			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
 			<section>
+				<h3 class='grey'> Recent Articles about <?php echo $page->title ?> </h3>
+				<div id="articles">
+					<?php
+						/*find all blog posts that mention Athena*/
+						$selector = "parent=/blog/, limit=10, tags*=".$page->title;
+						$matches = $pages->find($selector);
+						echo "<ul>";
+						foreach($matches as $match){
+							echo "<li><a href='".$match->url."'>".$match->title."</li>";
+						}
+						echo "</ul>";
+					?>
+				</div>
 			</section>
 			
 		</aside> <!-- sidebar -->

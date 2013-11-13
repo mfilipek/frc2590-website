@@ -46,7 +46,7 @@ include("./header.inc");
 									}
 							echo"</ul></div><!--flexSlider-->";
 						}
-						echo $page->postContent;
+						echo "<div id='blogPost'>".$page->postContent."</div>";
 					?>
 				</div>
 					<script>

@@ -4,6 +4,7 @@
  * Use this space to store PHP function used across the entire site
  */
  
+
  /* Print Status
   *
   * Print the "status" of a current team member, be it 

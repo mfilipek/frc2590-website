@@ -52,7 +52,7 @@ include("./header.inc");
 						foreach( $rPosts as $post){
 							echo "<li><a class='grey' href=\"$post->url\"> $post->title </a></li></br>";
 						}
-						if($rPosts.length == 0){
+						if( sizeof($rPosts) < 1 ){
 							echo "<li><i class='grey'> $page->firstName has not made any posts yet</i></li>";
 						}
 						?>
@@ -61,12 +61,19 @@ include("./header.inc");
 				<div id="blog-side">
 					<h3>Mentions</h3>
 					<!-- Search Blog Post Tags for name-->
-					<ul>
-						<li>Build Team Protocols</li>
-						<li>The Art of Irish Cooking</li>
-						<li>Science it Works</li>
-						<li>Take your Stinking Paws Off Me You Dirty Ape</li>
-					</ul>
+					<?php
+						$selector = "parent=/blog/, limit=10, tags*=".$page->lastName;
+						$matches = $pages->find($selector);
+						echo "<ul>";
+						foreach($matches as $match){
+							echo "<li><a class='grey' href='".$match->url."'>".$match->title."</a></li>";
+						}
+						if(sizeof($matches) < 1){
+							echo "<li><i class='grey'> $page->firstName has not been mentioned in any posts yet</i></li>";
+						}
+						echo "</ul>";
+
+					?>
 				</div>
 			</div>
 		</div><!--content-->
