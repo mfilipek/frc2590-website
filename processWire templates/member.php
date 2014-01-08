@@ -25,17 +25,23 @@ include("./header.inc");
 						<div id ="team" class="grey">
 							<?php
 								//Output Teams or Multiple Teams
-								printTeam($page);
+								printTeam($page, $pages);
 							?>
 						</div>
 							<?php 
 							if($page->mentor){ 
 								echo"<div id ='profession' class='grey'>$page->job</div>";
 								}
-							if($page->college){
+							else if($page->college){
 								echo"<div id='profession' class='grey'>$page->college</div>";
 							}
 							?>
+							<?php 
+					// If the page is editable, then output a link that takes us straight to the page edit screen:
+					if($page->editable()) {
+						echo "<a class='red' href='{$config->urls->admin}page/edit/?id={$page->id}'>Edit</a>"; 
+					}
+				?>
 					</div>
 				</div>
 				<div id ="bio">
@@ -48,7 +54,7 @@ include("./header.inc");
 					<ul>
 						<?php
 						/*Search blog for authored posts*/
-						$rPosts = $pages->find("parent=/Blog/, author=$page, limit=5, sort=date");
+						$rPosts = $pages->find("template=blogPost, author=$page, limit=5, sort=-date");
 						foreach( $rPosts as $post){
 							echo "<li><a class='grey' href=\"$post->url\"> $post->title </a></li></br>";
 						}
@@ -62,7 +68,7 @@ include("./header.inc");
 					<h3>Mentions</h3>
 					<!-- Search Blog Post Tags for name-->
 					<?php
-						$selector = "parent=/blog/, limit=10, tags*=".$page->lastName;
+						$selector = "parent=/blog/, sort=-date, limit=5, tags*=".$page->lastName;
 						$matches = $pages->find($selector);
 						echo "<ul>";
 						foreach($matches as $match){

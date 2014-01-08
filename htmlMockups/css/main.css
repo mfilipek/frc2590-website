@@ -29,6 +29,7 @@
 	color: #575656;
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	font-size: 12px;
+	height: 100%;
  }
  h1{
 	/*font-family:"codeBold";*/
@@ -40,7 +41,7 @@
  h2{
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	text-transform:uppercase;
-	color:#e62901;
+	color:#f01d0c;
 	margin:0px;
 	font-weight:400;
 	font-size:20px;
@@ -48,21 +49,27 @@
  h3{
 	font-family: 'Open Sans', Verdana, Helvetica, sans-serif;
 	text-transform:uppercase;
-	color:#e62901;
+	color:#f01d0c;
 	font-weight:400;
 	font-size:14px;
 	margin: 0px;
  }
  a{
 	text-decoration:none;
-	color:#e62901
+	color:#f01d0c;
+	
+	-webkit-transition:color 0.3s ease;  
+	-moz-transition:color 0.3s ease;  
+	-o-transition:color 0.3s ease;  
+	transition:color 1s ease;  
+
  }
  ul{
 	list-style:none;
 	padding:0px;
  }
 .red{
-	color:#e62901;
+	color:#f01d0c;
 	display:inline-block;
 	vertical-align:top;
 }
@@ -71,16 +78,24 @@
 	display:inline-block;
 	vertical-align:top;
 }
-.blue{
+.lblue{
 	color:#e4eff6;
 	display:inline-block;
 	vertical-align:top;
 	/*rgba(228,239,246,0.8)*/
 }
+.blue{
+	color:#5cbfd8;
+	display:inline-block;
+	vertical-align:top;
+}
 .white{
 	color:#fff;
 }
-
+.border{
+	border-color: #d6d6d6;
+	border-width: 2px;
+}
  /* ======================================================*/
  /* Container Class */
  /*
@@ -106,7 +121,8 @@
  #header-home {
 	margin-bottom: 20px;
 	height: 100px;
-	background-image:url('../images/headerBG.png');
+	background-color:white;
+	/*background-image:url('../images/headerBG.png');*/
 	background-size:100% 100%;
  }
 	#banner img{
@@ -131,7 +147,7 @@
 		}
 	#logo{
 		position:absolute;
-		margin-left:825px;
+		margin-left:830px;
 		top:35px;
 		z-index:1;
 	}
@@ -145,33 +161,56 @@
 
  #main{
 	background-color:#fff;
-	display: table;
+	width: 1100px;
+	height:100%;
  }
+ #main-container{
+	padding:20px;
+ }
+ 
  #content{
-	display: table-cell;
+	float: left;
+	vertical-align:top;
 	width:75%;
+	height:100%;
 }
 #flexslider-container{
-	height:630px;
+	height:560px;
 }
 .flexslider{
 	display:inline-block;
-	padding: 20px 0px 0px 20px;
-	width:92%;
+	width:100%;
 }
 
 .flex-viewport{
-	height:550px;
+	height:500px;
+}
+.flex-caption{
+	/*--------------*/
+	height:60px;
+	width:785px;
+	display:block;
+	position: absolute;
+	float:left;
+	bottom: 100px;
+	
+	padding-top:10px;
+	background: rgba(255,18,12,.6);
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	line-height: 18px;
+	/*--------------*/
 }
 
 #section-container{
-	margin: 0 0 50px 20px;
+	margin-bottom:50px;
 }
 #spacer{
 	margin-right:30px;
 }
 #content section{
-	width:45%;
+	width:376px;
 	height:378px;
 	display:inline-block;
 	vertical-align: top;
@@ -191,7 +230,7 @@
 		height: 20px;
 		text-align:center;
 		padding-top:4px;
-		margin-bottom:10px;
+		margin-bottom:5px;
 	}
 	#robot-label{
 		background-image:url('../images/div3_small.jpg');
@@ -201,10 +240,43 @@
 		background-image:url('../images/div4_small.jpg');
 		background-size: 100% 100%;
 	}
+.scrolltotop{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    padding: 11px;
+    border-radius: 5px;
+    border: 2px #E7E7E7 solid;
+	    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+    z-index: 99999;
+	}
+.scrolltotop.active {
+    opacity: 0.6;
+    right: 50px;
+}
+.scrolltotop:hover {
+    opacity: 1;    
+}
+.scrolltotop img {
+    width: 24px;
+    height: 24px;
+}
+#topscroller{
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	display: none;
+	opacity: 0;
+}
 /* ======================================================*/
 /* Sidebar */
 aside{
-	display: table-cell;
+	float: right;
 	vertical-align: top;
 }
 	#sidebar{
@@ -222,8 +294,10 @@ aside{
 	
 	#sidebar section{
 		border-style: solid none;
-		border-color: #e62901;
+		border-color: #f01d0c;
 		width: 240px;
+		padding:2px 0;
+		margin-bottom:10px;
 	}
 	#sidebar p{
 		width: 240px;
@@ -253,13 +327,9 @@ aside{
 			}
 			nav a{
 				color:#a4a4a4;
-				-webkit-transition:color 0.3s ease;  
-				-moz-transition:color 0.3s ease;  
-				-o-transition:color 0.3s ease;  
-				transition:color 1s ease;  
 			}
 			nav a:hover{
-				color:#e62901; /*red*/
+				color:#f01d0c; /*red*/
 			}
 	
 /* this targets the default scrollbar (compulsory) 
@@ -275,18 +345,36 @@ aside{
  /*Footer */
  footer{
 	border-top:solid;
-	border-color:#e62901;
-	background-color:#575656;
-	color:#fff;
-	height:130px;
+	border-color:#5e5e5e;
+	border-width:10px;
+	background-color:white;
+ }
+ #stripe{
+	width:100%;
+	height:5px;
+	background-color:#f01d0c;
  }
  #foot{margin-top:20px;
 	}
+	#foot #sponsor-logo{
+		width:100%;
+		height:110px;
+		vertical-align:top;
+		background-size:contain;
+		background-repeat:no-repeat;
+		background-position:center; 
+	}
  footer section{
-	width:20%;
-	margin-left:35px;
-	margin-top:20px;
+	width:186px;
+	height:100%;
+	padding-left:10px;
+	margin:20px 0 10px 20px;
 	display:inline-block;
+	vertical-align:top;
+	border-style:none none none dotted;
+	border-color:#f01d0c;
+	border-width:2px;
+	overflow:hidden;
 	}
 
 /* ======================================================*/
@@ -294,7 +382,7 @@ aside{
 #member-container{
 	margin: 20px 0px 20px 20px;
 
-	width:75%;
+	width:78%;
 	height:100%;
 	display:inline-block
 }
@@ -364,27 +452,36 @@ aside{
 /* ======================================================*/
 /* Members */
 #members-container{
-	padding:20px 10px 20px 20px;
+	padding:20px;
 }
+	#members-container #barR{
+		height:18px;
+	}
+	#bar li{
+		display:inline-block;
+		width:100px;
+	}
 .person{
-	width:200px;
-	padding:15px;
+	width:175px;
+	padding:10px;
 	display:inline-block;
 	vertical-align:top;
 }
 .person #profile{
 	display:inline-block;
+	width:175px;
+	height:175px;
 }
 .person #profile img{
-	width:200px;
-	height:200px;
+	width:160px;
+	height:160px;
 	-moz-border-radius:200px;
 	-webkit-border-radius:200px;
 	border-radius:200px;
 }
 .person #fields{
 	display:inline-block;
-	width:200px;
+	width:100%;
 }
 .bio{
 	display: inline;
@@ -407,13 +504,16 @@ aside{
 .bio:hover:before{
     border: solid;
    /* border-color: #333 transparent;*/
-	border-color: #e62901 transparent; 
+	border-color: #f01d0c transparent; 
     border-width: 6px 6px 0 6px;
     bottom: 150px;
     content: "";
     left: 70%;
     position: absolute;
     z-index: 99;
+}
+#teamNav li{
+	padding-bottom:10px;
 }
 /* ======================================================*/
 /* Blog Home */
@@ -434,7 +534,7 @@ aside{
 	margin: 10px 0;
 }
 	#bar h3{
-		padding-left:100px;
+		padding-left:120px;
 		font-weight:600px;
 	}
 .featured{
@@ -463,9 +563,9 @@ aside{
 }
 .mostRecent{
 	width:174px;
-	margin: 20px 10px;
 	display:inline-block;
 	vertical-align:top;
+	padding:10px;
 }
 .mostRecent:hover{
 	background-color:rgba(228,239,246,0.8);
@@ -522,7 +622,9 @@ aside{
 		-moz-border-radius: 200px;
 		-webkit-border-radius: 200px;
 		border-radius: 200px;
-		background-size: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position:center;
 		margin-bottom: 10px;
 	}
 	#name{
@@ -551,6 +653,9 @@ aside{
 	#featured img{
 		width:100%;
 	}
+	#blogPost img{
+		max-width:100%;
+	}
 /* ======================================================*/
 /* Robot */
 	#robot-container{
@@ -576,6 +681,14 @@ aside{
 			#robot-container .flexslider:hover .flex-next { 
 				 right: 50px; 
 			}
+		#robot-container .tumblr{
+			display:inline-block;
+			width:380px;
+			padding: 10px 5px;
+		}
+		#robot-container #tumblrImg{
+			margin-bottom:10px;
+		}
 	/*----------------------*/
 	#articles li{
 		margin-bottom:10px;
@@ -611,6 +724,9 @@ aside{
 			width:100%;
 			height:450px;
 			margin-top:10px;
+			border-style:none none solid none;
+			border-width:4px;
+			border-color:#f01d0c;
 			background-size:cover;
 			background-repeat:no-repeat;
 			background-position:center; 
@@ -657,12 +773,15 @@ aside{
 		#about{
 			width:100%;
 			overflow:hidden;
-			height:18em;
+			height:24.14em;
 			line-height:1.42em;
 		}
 		.readMore{
 			text-align:right;
 			width:100%;
+		}
+		#about p{
+			margin-top:0px;
 		}
 	#extras{
 		padding-top:10px;
@@ -678,3 +797,421 @@ aside{
 		background-size:100%;
 		padding-top:0px;
 	}
+/* ======================================================*/
+/* Robots */
+#robots-container{
+	margin:20px 20px;
+}
+	#robots-container #spacer{
+		margin-right:20px;
+	}
+	#robots-container #robotImg{
+		width:100%;
+		height: 300px;
+	}
+	#robots-container #stats-container{
+		width:100%;
+	}
+	#robots-container #robot-header{
+		padding:0px;
+		height:40px;
+	}
+	#robots-container #bar{
+		height:19px;
+		margin-bottom:0px;
+	}
+	#robots-container #about{
+		height:8.43em;
+		width:100%;
+	}
+	#robots-container #tumblr{
+		width:100%;
+	}
+	
+	.robot-small{
+		width:248px;
+		display:inline-block;
+		vertical-align:top;
+	}
+	.robot-small h1{
+		font-weight:400;
+		font-size:20px;
+	}
+	.robot-large{
+		width:382px;
+		display:inline-block;
+		vertical-align:top;
+	}
+/* ======================================================*/
+/* Calendar */
+#calendar-container{
+	margin: 10px;
+}
+#calendarContainer1{
+	background-color: #d6d6d6;
+}
+#mvDaynamesTable{
+	background:#d6d6d6;
+}
+/* ======================================================*/
+/* SponsorsSponsors */
+#sponsors-container{
+	margin: 20px;
+}
+	#sponsors-container #bio{
+		height:100%;
+		vertical-align:top;
+		border-style: none dotted;
+		border-width: 2px;
+		padding: 0 10px;
+	}
+#sponsor{
+	display:inline-block;
+	padding-left:10px;
+	margin-right:10px;
+	width:40%;
+}
+	#sponsor-logo{
+		width:100%;
+		height:200px;
+		background-repeat: no-repeat;
+		background-position:center;
+	}
+#sponsors-container #{
+	display:inline-block;
+	width:25%;
+}
+.sponsor-robot{
+	width:118px;
+	display:inline-block;
+	margin: 10px;
+	vertical-align:top;
+}
+.sponsor-robot #profile{
+	width:115px;
+	height:115px;
+}
+#sponsor-robot-container{
+	margin:20px 0;
+	padding:20px 0;
+	border-style:dotted none none none;
+}
+.sponsor{
+	width:370px;
+	padding:10px;
+	display:inline-block;
+}
+
+#sponsorImg{
+	width:100%;
+	height:100px;
+}
+#supportImg{
+	display:inline-block;
+	margin-right:20px;
+	vertical-align:top;
+}
+#support{
+	display:inline-block;
+	width:510px;
+}
+#feat img{
+	width:100%;
+	margin-bottom:10px;
+}
+#sponsors-container #barR{
+	height:7px;
+}
+/* ======================================================*/
+/* Resources */
+
+#resources-container{
+	margin:20px;
+	border-style: none dotted none none;
+	height:100%;
+	font-size:14px;
+}
+	#resources-container li{
+		/*
+		border-style: dotted none none none;
+		border-color: #d6d6d6;
+		border-width: 2px;
+		margin-left:40px;*/
+		padding:4px 0;
+	}
+	#resources-container a{
+		color: #a4a4a4;
+		position:relative;
+	}
+		#resources-container a:hover{
+		color:#f01d0c; /*red*/
+		}
+
+		#resources-container a.linkDesc span{
+			display:none;
+		}
+		#resources-container a.linkDesc:hover span{
+			display: block;
+			width:250px;
+			left: 50px;
+			top: 20px;
+			position: absolute;
+			
+			background: rgba(255,18,12,.8);
+			color: #fff;
+			z-index: 100;
+			padding: 10px;
+			
+		}
+		
+#blockLeft{
+	width:240px;
+	height:100%;
+	border-style:none dotted none none;
+	display:inline-block;
+	vertical-align:top;
+	padding-right:10px;
+}
+	#blockLeft img{
+		padding:0 15px;
+	}
+.blockList{
+	display:inline-block;
+	vertical-align:top;
+	padding:10px;
+	margin-left:10px;
+	/*width: 535px;*/
+	width: 220px;
+	height:290px;
+}
+	#noMargin{
+		margin-left:0px;
+		margin-right:0px;
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+#heading{
+	margin-bottom:20px;
+	border-style:none none dotted none;
+}
+#tumblr{
+	display:inline-block;
+	padding-bottom:10px;
+}
+.tumblr{
+	position: relative;
+	width:500px;
+	vertical-align:top;
+}
+	#tumblr img{
+		width:500px;
+	}
+	#tumblr-desc{
+		width:500px;
+		height:50px;
+		position:absolute;
+		float:left;
+		bottom:20px;
+		
+		text-align:center;
+		color:#fff;
+		background-color:rgba(255,18,12,.8);
+	}
+		#tumblr-desc p{
+			color:#fff;
+		}
+#tutorials{
+	display:inline-block;
+	width:230px;
+	height:100%;
+	vertical-align:top;
+	padding:10px 10px;
+
+	color:#fff;
+	background-color:rgba(255,18,12,.85);
+}
+	#tutorials #heading{
+		color: white;
+	}
+	#tutorials a{
+		color: white;
+	}
+	#tutorials a:hover{
+		color: rgb(102,208,234);
+	}
+		#tutorials a span{
+			display:none;
+		}
+		#tutorials a:hover span{
+			display: block;
+			width:250px;
+			left: 50px;
+			top: 20px;
+			position: absolute;
+			
+			background: rgba(102,208,234,0.9);
+			color:#fff;
+			z-index: 100;
+			padding: 10px;
+		}
+		#tutorials a.linkDesc:hover span{
+			background: rgba(102,208,234,0.95);
+		}
+		#firstLinks a.linkDesc:hover span{
+			background: rgba(102,208,234,0.9);
+		}
+/* ======================================================*/
+/* Resources */
+#team-container{
+	margin:20px;
+	border-style: none dotted none none;
+	height:100%;
+}
+	#team-container li{
+		padding:5px 0;
+	}
+		#team-container li a{
+			/*color:#a4a4a4;*/
+			color:#5cbfd8;
+		}
+		
+	#team-container .featured{
+	width:252px;
+	padding:5px;
+	}
+	#team-container #details{
+		margin-bottom:10px;
+	}
+	#team-container #blockLeft{
+		min-height:379px;
+		/* height:379px; */
+	}
+	/*Slider Div*/
+	#team-container .flex-viewport{
+		height:350px;
+		width:98%;
+	}
+	#team-container .flex-control-nav{
+		bottom: -10px;
+	}
+	
+	/*Tumblr Div*/
+	#team-container .tumblr{
+		width: 380px;
+		padding: 10px 5px;
+		display:inline-block;
+	}
+	#team-container #tumblr-desc{
+		width: 380px;
+	}
+	#team-container #tumblr{
+		width:100%;
+	}
+	#team-container #tumblr img{
+		width: 380px;
+	}
+#teamHeader{
+	position:relative;
+	height: 390px;
+	width:783px;
+
+}
+#teamLabel{
+	width:300px;
+    height: auto;
+	position: relative;
+	margin: 0 auto;
+	padding: 20px;
+	top:-280px;
+	z-index: 1;
+	text-align:center;
+	color:#fff;
+	background-color:rgba(255,18,12,.9);
+}
+	#canvasHeader #teamLabel{
+		top:-240px;
+	}
+.teamBlock{
+	padding: 10px 0;
+		border-color: #d6d6d6;
+	border-width: 2px;
+	border-style:none none dotted none;
+}
+#mentorBlock{
+	display:inline-block;
+	vertical-align:top;
+	padding-left:10px;
+	width: 515px;
+	padding-bottom:10px;
+}
+	#mentorBlock .person{
+		width:156px;
+		padding:5px;
+	}
+	#mentorBlock .person #profile{
+		width:155px;
+		height:155px;
+	}
+	#mentorBlock .bio:hover:after{
+		width:150px;
+		min-height:50px;
+		bottom:120px;
+	}
+	#mentorBlock .bio:hover:before{
+		bottom:114px;
+	}
+#blockLarge{
+	width:525px;
+	display:inline-block;
+}
+	#blockLarge #fields{
+		font-size:12px;
+		text-align:center;
+		overflow:hidden;
+		/*264 chara*/
+	}
+	#blockLarge #fields h3{
+		margin-bottom:10px;
+	}
+	#blockLarge #blogImg-container{
+		height:250px;
+	}
+/*
+#team-container #blogImg-container{
+	border-style:solid none none none;
+	border-width:5px;
+	border-color:#f01d0c;
+}*/
+#blockSmall{
+	width:230px;
+	height:390px;
+	display:inline-block;
+	vertical-align:top;
+	font-size:14px;
+	border-style:none none none dotted;
+	padding-left:15px;
+}
+
+#tumblrImg{
+	width:380px;
+	height:300px;
+}
+
+#communityImg{
+	width:785px;
+	height:30%;
+	//border-style:groove none groove none;
+	display:block;
+	vertical-align:top;
+    padding-top:10px;
+    padding-bottom:10px;
+	padding-right:10px;
+    padding-left:10px;
+}
+
+#testImg{
+    height:240px;
+	display:inline-block;
+	margin-left:20px;
+	vertical-align:top;
+}

@@ -7,7 +7,17 @@ include("./header.inc");
 	<div id="main" class="container">
 		<div id="content">	
 			<div id="members-container">
-				<div id="post-header"><h2 class="red"> Members</h2></div>
+				<div id="bar">
+					<ul>
+						<h3 class="white">
+						<li><a class="white" href="#" onclick="smoothScroll('members');">Members</a></li>
+						<li><a class="white" href="#mentors" onclick="smoothScroll('mentors');">Mentors</a></li>
+						<li><a class="white" href="#alumni" onclick="smoothScroll('alumni');">Alumni</a></li>
+						</h3>
+					</ul>
+				</div>
+				
+				<div id="post-header"><h2 class="red"><div id="members"> Members</div></h2></div>
 				<?php
 				/*Pull all member pages with a graduation year within four years
 				  of the current year*/
@@ -30,11 +40,11 @@ include("./header.inc");
 						echo "<div id='status'>";
 						printStatus($member);
 						echo "</div><div id='team'>";
-						printTeam($member);
+						printTeam($member, $pages);
 						echo "</div></div></div>";
 					}
 				?>
-				<div id="post-header"><h2 class="red"> Mentors</h2></div>
+				<div id="post-header"><h2 class="red"><div id="mentors"> Mentors </div></h2></div>
 				<?php
 				/*Pull all member pages with the Mentor flag flipped*/
 					$mentors = $pages->find("mentor=1, sort=class");
@@ -47,13 +57,13 @@ include("./header.inc");
 						echo "<div id='status'>";
 						printStatus($mentor);
 						echo "</div><div id='team'>";
-						printTeam($mentor);
+						printTeam($mentor, $pages);
 						echo "</div>";
 						if(($mentor->job)!=null){echo "<div id='profession'>$mentor->job</div>";}
 						echo "</div></div>";
 					}
 				?>
-				<div id="post-header"><h2 class="red"> Alumni </h2></div>
+				<div id="post-header"><h2 class="red"><div id="alumni"> Alumni </div></h2></div>
 				<?php
 				/*Pull all member pages with a graduation year greater than the cur year */
 				$alumni;
@@ -75,27 +85,14 @@ include("./header.inc");
 						echo "<div id='status'>";
 						printStatus($member);
 						echo "</div><div id='team'>";
-						printTeam($member);
+						printTeam($member, $pages);
 						echo "</div><div id='profession'>";
 						if($member->college!=null){echo $member->college; echo "</br>";}
 						if($member->job!=null){echo $member->job;}
 						echo "</div></div></div>";
 					}
 				?>
-			</div><!--members-container-->
-			
-			<script>
-			/*Script that replaces the php generated URL in the "profile" div with
-			  a background-image css attribute and erases the URL*/
-				var profileImages = document.getElementsByName("profile");
-				for( var i=0; i<profileImages.length; i++){
-					var url = "url('";
-					url = url.concat(profileImages[i].innerHTML);
-					url = url.concat("')");
-					profileImages[i].style.backgroundImage = url;
-					profileImages[i].innerHTML="";
-				}
-			</script>
+			</div><!--members-container--> 
 			
 		</div><!--content-->
 		<aside id="sidebar">
@@ -105,12 +102,28 @@ include("./header.inc");
 
 			<img src="<?php echo $config->urls->templates?>images/div2.jpg">
 			<section>
-			</section>
-			
-		</aside> <!-- sidebar -->
-		
+				<p>FRC Team 2590, Nemesis, is an award winning FIRST Robotics team based out of Robbinsville High School in New Jersey.
+				</p>
+				<p>Founded in 2008, the students in Nemesis routinely solve challenges in business, computer science, engineering, and math.
+				</p>
+			</section>	
+			<?php
+				echo "<nav><ul>";
+				$teamPages = $pages->find("template=team");
+				foreach( $teamPages as $p){
+					echo "<li><h3><a class='red' href='{$p->url}'>{$p->title}</a></h3></li>";
+				}
+				echo "</ul></nav>"
+			?>
+		</aside> <!-- sidebar -->	
 	</div> <!--container-->
-		
+	
+<script>
+/*Script that replaces the php generated URL in the "profile" div with
+  a background-image css attribute and erases the URL*/
+cssBackground("profile");
+</script>
+			
 <?php
 include("./footer.inc");
 ?>

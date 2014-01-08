@@ -58,7 +58,17 @@ include("./header.inc");
 							?>
 						</div>
 						<div class="readMore">
-							<a href="<?php if($page->aboutPointer){echo $page->aboutPointer->url."#blogPost";} ?>">...Continue Reading</a>
+							<?php
+								if($page->aboutPointer){
+									echo "<a href='".$page->aboutPointer->url."'>...Continue Reading</a>";
+								}
+								else{
+									echo"<script>
+										var about = document.getElementById(\"about\");
+										about.style.height = about.scrollHeight+'px';
+										</script>";
+								}
+							?>
 						</div>
 					<div id="title"><h1 class="red">The Challenge</h1></div>
 					<h3 class="grey"><?php echo $page->challengeName; ?></h3>
@@ -75,23 +85,40 @@ include("./header.inc");
 					}
 				?>
 
-				<div id="extras">
-					<div class="extra" id="spacer">
-						<div class="label" id="robot-label">Articles</div>
+				<div id="barR"> </div>
+				
+				<div id="tumblr">
+					<?php 
+					/*Retrieve latest post from the tumblr*/
+						$request_url = "http://frc2590.tumblr.com/api/read?start=0&type=photo&tagged={$page->title}";
+						$xml = simplexml_load_file($request_url);
+						foreach($xml->posts->post as $post){
+							$title = $post->{'photo-caption'};
+							$postURL = $post['url'];
+							$photoURL = $post->{'photo-url'};
+							echo"<div class='tumblr'>
+									<a href='".$postURL."'>
+										<div id='tumblrImg' class='bgReplace' name='tumblrImg'>{$photoURL}</div>
+									</a>
+								 ";
+							if($title != ""){
+								//description in a normal field block
+								echo "<div id='fields'><a href='{$postURL}'>".$title."</a></div>";
+								//description on a red transparency
+								/*echo "<div id='tumblr-desc'><a class='white' href='{$postURL}'>
+										".$title."
+									  </a></div>";*/
+							}
+							echo"</div>";
+						}
+					?>
 					</div>
-					<div class="extra" id="spacer">
-						<div class="label" id="robot-label"></div>
-					</div>
-					<div class="extra">
-						<div class="label" id="robot-label">Record</div>
-					</div>
-				</div>
-			</div>
+				
+				
+			</div><!--robot container -->
 		<script>
 			cssBackground("profile");
-	/*		if(<?php echo $page->sliderHeight;?>){ 
-				(document.getElementsByClassName('flex-viewport')[0]).style.height = <?php echo $page->sliderHeight.'px'; ?>; 
-				}*/
+			cssBackground("tumblrImg");
 		</script>
 				
 		</div><!--content-->
@@ -111,7 +138,7 @@ include("./header.inc");
 						$matches = $pages->find($selector);
 						echo "<ul>";
 						foreach($matches as $match){
-							echo "<li><a href='".$match->url."'>".$match->title."</li>";
+							echo "<li><a href='".$match->url."'>".$match->title."</a></li>";
 						}
 						echo "</ul>";
 					?>
